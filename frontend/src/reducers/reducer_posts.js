@@ -4,9 +4,8 @@ import { FETCH_POSTS } from '../actions';
 const reducer = (state = {} , action) => {
     switch(action.type) {
         case FETCH_POSTS:
-        console.log(action.payload);
-            return action.payload || null;
-            // break;
+            console.log(action.payload);
+            return _.mapKeys(action.payload.data, 'id');
         default:
         return state;
     }
